@@ -35,11 +35,13 @@ function TodoItem({ todo, index, deleteTodo, toggleTodo, editTodo }) {
 
 
       <Box display="flex" alignItems="center" width="100%">
+      <Tooltip title={todo.completed?"Mark as Pending":"Mark as Done"}>
       <Checkbox
         edge="start"
         checked={todo.completed}
         onChange={() => toggleTodo(index)}
       />
+      </Tooltip>
      
         <Typography variant="body1" color="textSecondary" marginRight={2}>
           {index + 1}.
